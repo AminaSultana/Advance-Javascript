@@ -5,11 +5,13 @@
 //Create 5 students with different names and age.
 
 class Student{
+    static noOfStudents=0;
     constructor(name,age,phoneNumber,boardMarks){
         this.name = name,
         this.age=age,
         this.phoneNumber=phoneNumber,
         this.boardMarks=boardMarks
+        Student.noOfStudents+=1;
     }
     checkEligibility(){
         if(this.boardMarks>40){
@@ -18,6 +20,9 @@ class Student{
         else{
             console.log(`${this.name} is not eligible for college`);
         }
+    }
+    getNoOfStudents(){
+        return Student.noOfStudents;
     }
 }
 
@@ -32,3 +37,4 @@ ria.checkEligibility();
 piyush.checkEligibility();
 nirav.checkEligibility();
 jasmin.checkEligibility();
+console.log(jasmin.getNoOfStudents());
